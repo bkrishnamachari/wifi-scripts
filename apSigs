@@ -1,0 +1,11 @@
+#! /bin/sh
+# simple program to generate list of nearby AP SSID's and their signal strength
+#  -Bhaskar Krishnamachari, August 2016
+#
+#  Note: you may need to change "wlo1" in the line below to your own 
+#    wireless interface name, which you can find by running ifconfig 
+#    by itself or try the following:
+#
+#  ifconfig -a |grep "Link encap"|grep wl|head -n1|cut -f 1 -d ' '
+
+sudo iw dev wlo1 scan | grep -f skeys

@@ -1,0 +1,15 @@
+#!/bin/bash
+# simple program to get the signal strength from AP
+# -Bhaskar Krishnamachari
+#
+#  Note: you may need to change "wlo1" in the line below to your own
+#    wireless interface name, which you can find by running ifconfig
+#    by itself or try the following:
+#
+#  ifconfig -a |grep "Link encap"|grep wl|head -n1|cut -f 1 -d ' '
+
+for i in `seq 1 10`;
+        do 
+           sleep 1 ; 
+           iwconfig wlo1| grep Signal ; 
+done
